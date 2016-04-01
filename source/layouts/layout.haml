@@ -1,0 +1,49 @@
+!!!
+%html
+  %head
+    %meta{ content: "IE=edge", "http-equiv": "X-UA-Compatible" }
+    %meta{ charset: "utf-8" }
+    %meta{ content: "width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no", name: "viewport" }
+    %meta{ name: "HandheldFriendly", content: "True" }
+
+    / --- Variables
+    - description = "Armstrong & Gunnarsson Galleries, Events and Works"
+    / Use title if it's in the page YAML frontmatter
+    - title = current_page.data.title || "Armstrong & Gunnarsson"
+    - root_url = "http://armstrongandgunnarsson.com"
+
+    %title
+      = title
+
+    / site info, about
+    %meta{ name: "description", content: description }
+
+    %meta{ property: "og:site_name", content: "Armstrong & Gunnarsson" }
+    %meta{ property: "og:type", content: "website" }
+    %meta{ property: "og:title", content: title }
+    %meta{ property: "og:description", content: description }
+    %meta{ property: "og:url:", content: root_url }
+    %meta{ name: "twitter:card", content: "summary" }
+    %meta{ name: "twitter:title", content: title }
+    %meta{ name: "twitter:description", content: description }
+    %meta{ name: "twitter:url", content: root_url }
+
+    %script{ type:"application/ld+json" }
+      {
+      "@context": "http://schema.org",
+      "@type": "Website",
+      "publisher": "Armstrong & Gunnarsson",
+      "url": root_url,
+      "description": description
+      }
+
+    %link{ href: '//fonts.googleapis.com/css?family=Lato:300,400', rel: 'stylesheet', type: 'text/css' }
+
+    = stylesheet_link_tag :site
+    = javascript_include_tag :all
+
+    -# Google Analytics
+    = javascript_include_tag :ga
+
+  %body{ class: page_classes }
+    = yield
