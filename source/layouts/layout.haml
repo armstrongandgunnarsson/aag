@@ -46,4 +46,26 @@
     = javascript_include_tag :ga
 
   %body{ class: page_classes }
-    = yield
+    %header.welcome
+      .container.container-header
+        %h1 Armstrong & Gunnarsson
+
+    %section
+      .container
+        = yield
+
+    %footer
+      .container.container-footer
+        .about
+          %h2 About
+          %p
+            Armstrong & Gunnarsson is an artist collaborative founded by Kirsty Armstrong and Jeanette Gunnarsson.
+        .work
+          %h2 Work
+          %p
+            Their creative ventures include group and solo exhibitions featuring the works of up and coming London artists.
+        .social
+          %h2 Contact
+          %p
+            = link_to "Contact us via Mail", "mailto:info@armstrongandgunnarsson.com", target: "_blank", class: "icon mail"
+            = link_to "Visit us on Instagram", "https://instagram.com/armstrong_gunnarsson", target: "_blank", class: "icon instagram"
