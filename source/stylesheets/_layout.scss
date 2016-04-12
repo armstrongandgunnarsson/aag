@@ -24,6 +24,9 @@ header {
 }
 
 .events {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox; // 2011 (IE 10)
   display: flex;
   padding: 2rem;
   text-align: left;
@@ -42,7 +45,13 @@ header {
 
 @include media(max-width 769px) {
   .events {
+    -webkit-flex-flow: row wrap;
+    -moz-flex-flow: row wrap;
     flex-flow: row wrap;
+    -webkit-justify-content: space-around;
+    -moz-justify-content: space-around;
+     -ms-justify-content: space-around;
+     -o-justify-content: space-around;
     justify-content: space-around;
 
     .image {
@@ -59,8 +68,17 @@ footer {
 }
 
 .container-footer {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox; // 2011 (IE 10)
   display: flex;
+  -webkit-flex-flow: row wrap;
+  -moz-flex-flow: row wrap;
   flex-flow: row wrap;
+  -webkit-justify-content: space-around;
+  -moz-justify-content: space-around;
+   -ms-justify-content: space-around;
+   -o-justify-content: space-around;
   justify-content: space-around;
 
   > div {
